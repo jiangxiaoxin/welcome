@@ -42,7 +42,7 @@ module.exports = {
    * run middleware when route change
    */
   router: {
-    middleware: 'auth'
+    middleware: ['all', 'more']
   },
 
   /*
