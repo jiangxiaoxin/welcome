@@ -32,12 +32,13 @@
 export default {}
 </script>
 
-<style>
+<style lang='less'>
 .container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fade-in 1.2s ease-in;
 }
 
 .center {
