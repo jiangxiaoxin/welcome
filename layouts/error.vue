@@ -8,7 +8,9 @@
 
 <script>
 export default {
-  // layout: 'blogs'
+  mounted() {
+    console.log(this)
+  }
 }
 </script>
 
