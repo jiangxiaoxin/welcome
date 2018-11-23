@@ -38,6 +38,13 @@ module.exports = {
     // '@/plugins/element-ui'
   ],
 
+  /**
+   * run middleware when route change
+   */
+  router: {
+    middleware: 'auth'
+  },
+
   /*
   ** Nuxt.js modules
   */
