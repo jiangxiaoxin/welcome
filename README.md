@@ -28,3 +28,28 @@ For detailed explanation on how things work, checkout [Nuxt.js docs](https://nux
 添加中间价貌似并不能 hot reload，要重新启动才能生效.  
 
 中间件可以是字符串，也可以是字符串数组。名字就是在`middleware`里创建的那些文件的名字。
+
+中间件会在路由发生变化时调用，那就可以用来做权限判断。在发生路由变化时，根据本地的用户记录（store/storage）判断用户是否有权进入页面。如果没权限就`redirect`到登录页。
+
+中间件接收到的参数里有很多重要的信息。
+
+在`layouts`文件夹里添加`error.vue`，如果找不到路由，就会跳到这里。
+
+在`layouts`写的`vue`文件，可以被别的**页面组件**调用。如下，在`blog`组件里使用了`basic`，那`blog`的全部内容都将渲染在`basic`的`<nuxt />`标签里
+
+```javascript
+// layouts/basic.vue
+<template>
+  <div>
+    <div>这里是导航</div>
+    <nuxt/>
+  </div>
+</template>
+```
+
+```javascript
+// pages/blog.vue
+export default {
+  layout: 'basic'
+}
+```
